@@ -19,8 +19,8 @@
 
     <input class ="input is-large input-name is fullwidth" placeholder="Nameー名前">
     <input class ="input is-large input-ws is fullwidth" placeholder="Work stationー工程ー機械ー場所">
-    <input class ="input is-large input-code is fullwidth" placeholder="Codeー図面コード" id="fucus-code">
-    <button type="button" onclick="sendData()">Send</button>
+    <input class ="input is-large input-code is fullwidth" placeholder="Codeー図面コード*Number-数量" id="fucus-code">
+    <button class="button is-large is-fullwidth is-primary is-focused" onclick="sendData()">Save-保存</button>
     <div style=" width: 800px; margin: 0 auto;" id="reader"></div>
  
 
@@ -43,7 +43,7 @@
 
        const API_URL = "https://script.google.com/macros/s/AKfycbwB4klSosnwM6hw_4uim-QAE0K_oSl5EUXl9S1rGuTd23ZbRv9STq1eSrVQO7lX4at0/exec"
        let html5QrCode;
-       const config={fps:5,qrbox: 400}
+       const config={fps:5,qrbox: 450}
 
       function qrCodeSuccessCallback(message) {
         onScanSuccess(message)

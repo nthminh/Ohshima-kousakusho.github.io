@@ -14,23 +14,41 @@
             大島工作所
           </p>
     </div>
+
       </section>      
-      
-    <input class ="input is-large input-name is center" placeholder="Nameー名前">
-    <input class ="input is-large input-ws is center" placeholder="Work stationー工程ー機械ー場所">
-    <text-align: center>
-    <!-- button type = "button" onclick="sendData()"> sendData</button>-->
+
+    <input class ="input is-large input-name is fullwidth" placeholder="Nameー名前">
+    <input class ="input is-large input-ws is fullwidth" placeholder="Work stationー工程ー機械ー場所">
+    <input class ="input is-large input-code is fullwidth" placeholder="Codeー図面コード" id="fucus-code">
+    <button type="button" onclick="sendData()">Send</button>
     <div style=" width: 800px; margin: 0 auto;" id="reader"></div>
-  
+ 
+
     <script>
+      
+      function sendData(){
+        const API_URL = "https://script.google.com/macros/s/AKfycbwB4klSosnwM6hw_4uim-QAE0K_oSl5EUXl9S1rGuTd23ZbRv9STq1eSrVQO7lX4at0/exec"
+        const options = {
+          method: 'POST',
+          contentType: 'application/json',
+          body: JSON.stringify({name: document.querySelector('.input-name').value,ws: document.querySelector('.input-ws').value, class:document.querySelector('.input-code').value})
+        }
+        const response = fetch(API_URL, options)
+        .then(response => response.json())
+        .then(data=> console.log(data))
+          document.querySelector('.input-code').value=''
+          document.getElementById("fucus-code").focus();
+        play();
+      }
+
        const API_URL = "https://script.google.com/macros/s/AKfycbwB4klSosnwM6hw_4uim-QAE0K_oSl5EUXl9S1rGuTd23ZbRv9STq1eSrVQO7lX4at0/exec"
        let html5QrCode;
-       const config={fps:20,qrbox: 350}
+       const config={fps:5,qrbox: 400}
 
       function qrCodeSuccessCallback(message) {
         onScanSuccess(message)
       }
-     function play() { 
+      function play() { 
 
             var audio = new Audio( 
 'https://media.geeksforgeeks.org/wp-content/uploads/20190531135120/beep.mp3'); 

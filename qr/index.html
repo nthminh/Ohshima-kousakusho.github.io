@@ -11,13 +11,13 @@
       <section class ="hero is-primary">
         <div class ="hero-body">
           <p class = "title">
-            大島工作所
+            大島工作所-電子日報
           </p>
     </div>
 
       </section>      
-
-    <input class ="input is-large input-name is fullwidth" placeholder="Nameー名前">
+    <button class="button is-large is-fullwidth is-info is-focused" onclick="ChangeName()">ChangeName-名前変更</button>
+    <input class ="input is-large input-name is fullwidth" placeholder="Nameー名前" id ="Name">
     <input class ="input is-large input-ws is fullwidth" placeholder="Work stationー工程ー機械ー場所">
     <input class ="input is-large input-code is fullwidth" placeholder="Codeー図面コード*Number-数量" id="fucus-code">
     <button class="button is-large is-fullwidth is-primary is-focused" onclick="sendData()">Save-保存</button>
@@ -25,7 +25,11 @@
  
 
     <script>
-      
+      function ChangeName(){
+        document.querySelector('.input-name').value=''
+        document.getElementById("Name").focus();
+
+      }
       function sendData(){
         const API_URL = "https://script.google.com/macros/s/AKfycbwB4klSosnwM6hw_4uim-QAE0K_oSl5EUXl9S1rGuTd23ZbRv9STq1eSrVQO7lX4at0/exec"
         const options = {
@@ -75,8 +79,6 @@
         html5QrCode = new Html5Qrcode('reader')
         html5QrCode.start ({ facingMode: "environment"},config,qrCodeSuccessCallback)
       }
-
-
 
       startScan(); 
     </script>

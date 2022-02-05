@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
   <head>
     <base target="_top">
@@ -11,7 +11,7 @@
   </head>
   <body>
     <div class = "container is-fluid">
-      <section class ="hero is-small is-primary">
+      <section class ="hero is-small  is-primary">
         <div class ="hero-body">
           <p class = "title">
             大島工作所-電子日報
@@ -22,9 +22,11 @@
     <button class="button is-normal is-fullwidth is-info is-focused" onclick="ChangeName()">ChangeName-名前変更</button>
     <input class ="input is-normal input-name is fullwidth" placeholder="Nameー名前" id ="Name">
     <input class ="input is-normal input-ws is fullwidth" placeholder="Work stationー工程ー機械ー場所">
-    <input class ="input is-normal input-code is fullwidth" placeholder="Codeー図面コード" id="fucus-code">
-    <input class="input is-warning input-Number is-half is-offset-one-quarter"   placeholder="Number-数量" id="Number-code">
-    <input class="input is-danger input-NG is-small is-half is-offset-one-quarter" placeholder="不良数/不足数-Số hàng hỏng hoặc thiếu"  id="NG-code">
+    <label class="label">QR-Code/図面コード/総合コード</label>
+    <input class ="input is-rounded input-code is fullwidth" placeholder="Codeー図面コード" id="fucus-code">
+    <input class="input is-warning input-Number "   placeholder="Number-数量" id="Number-code">
+    <label class="label">不良か不足　数を入力してください/Số hàng hỏng hoặc thiếu</label>
+    <input class="input is-danger input-NG is-small " placeholder="不良数/不足数-Số hàng hỏng hoặc thiếu"  id="NG-code">
 
 
     <button class="button is-large is-fullwidth is-primary is-focused" onclick="sendData()">Save-保存</button>

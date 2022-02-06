@@ -82,10 +82,7 @@
         const response = fetch(API_URL, options)
         .then(response => response.json())
         .then(data=> startScan())
-        document.querySelector('.input-code').value=''
-          document.querySelector('.input-Number').value=''
-          document.querySelector('.input-NG').value=''
-          document.getElementById("fucus-code").focus();
+        
         play();
       }
 

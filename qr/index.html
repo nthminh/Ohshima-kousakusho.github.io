@@ -77,15 +77,14 @@
         .then(data=> startScan())
           document.querySelector('.input-code').value=''
           document.querySelector('.input-Number').value=''
-          document.querySelector('.input-NG').value=''
-        play()
+          document.querySelector('.input-NG').value='';
       }
 
       function startScan(){
         document.getElementById('reader').innerHTML =''
         html5QrCode = new Html5Qrcode('reader')
         html5QrCode.start ({ facingMode: "environment"},config,qrCodeSuccessCallback)
-        
+        play();
       }
 
       startScan(); 

@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <base target="_top">
@@ -56,13 +56,14 @@
           <button class="button is-warning" onclick="ChangeCode()">
             QR-Code </button>
         
+          
       </div>
 
     <input class ="input is-normal input-name is fullwidth" placeholder="Nameー名前" id ="Name">
     <input class ="input is-normal input-ws is fullwidth" placeholder="Work stationー工程ー機械ー場所" id ="WS" >
     
     <input class ="input is-rounded is-large input-code is fullwidth" placeholder="Codeー図面コード" id="code">
-    <input class="input is-large is-warning input-Number "   placeholder="Number-数量" id="Number-code">
+    <input class="input is-normal is-warning input-Number "   placeholder="Number-数量" id="Number-code">
 
        
       
@@ -102,6 +103,10 @@
 }
       function sendData(){
         IsEmpty() ;
+        if (document.querySelector('.input-code').value === "") {
+          alert("QRコードを入力してください-Hãy nhập mã hàng");
+        return false;
+      }
         const API_URL = "https://script.google.com/macros/s/AKfycbxYuNTZTlnhaVZlgPEtQSoBs1AVRt_PjoJx0HQ1xANV2EjPOTcKRgGGmvSG71wkvvWx/exec"
         const options = {
           method: 'POST',

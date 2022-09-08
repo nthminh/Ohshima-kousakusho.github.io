@@ -34,15 +34,7 @@
   </head>
   <body>
     
-     <div class = "container is-fluid">
-      <section class ="hero is-small  is-primary">
-        <div class ="hero-body">
-          <p class = "title">
-            大島工作所-電子日報
-          </p>
-    </div>
-
-      </section>      
+    
     <div class="field is-grouped">
         <p class="control">
           <button class="button is-info" onclick="ChangeName()">
@@ -81,6 +73,18 @@
   </div>
        <button class="button is-danger is-fullwidth " onclick="sendData()">Save-保存</button>
        <div style=" width: 800px; margin: 0 auto;" id="reader"></div>
+
+       
+  <div class = "container is-fluid">
+      <section class ="hero is-small  is-primary">
+        <div class ="hero-body">
+          <p class = "title">
+            大島工作所-電子日報
+          </p>
+    </div> 
+      </section>      
+
+
     <script>
       function ChangeName(){
         document.querySelector('.input-name').value=''
